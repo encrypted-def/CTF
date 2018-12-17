@@ -1,3 +1,10 @@
+# 0x6161 -> 'AA'
+def hexint2str(x):
+  import binascii
+  s = hex(x)[2:]
+  if len(s) % 2 == 1: s = '0'+s
+  return binascii.unhexlify(s).decode()
+
 def gcd(a, b):
   if a == 0: return b
   return gcd(b%a, a)
