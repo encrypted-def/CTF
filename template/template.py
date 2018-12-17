@@ -14,6 +14,11 @@ def inv(a, m):
     raise Exception('No modular inverse')
   return x%m
 
+# x**2 = a (mod m), m is prime
+def quad_congruence_equation(a, m):
+  assert((m+1)%4 == 0)
+  return pow(a, (m+1)//4, m)
+
 # m must satisfies pairwise relatively prime
 def crt(a, m):
   n = len(m)
