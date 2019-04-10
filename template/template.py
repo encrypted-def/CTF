@@ -34,10 +34,6 @@ def crt(a, m):
     ret = (ret*m[i]*m2inv+a[i]*m1*m1inv)%mod
   return ret
 
-# 0x6161 -> 'AA'
-def i2s(x):
-  return long_to_bytes(x).decode("utf-8")
-
 ############ my socket ###############
 def interactive(socket):
   print("[+] interactive mode")
