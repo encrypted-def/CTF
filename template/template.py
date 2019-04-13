@@ -5,11 +5,16 @@ def gcd(a, b):
   while(b): 
     a,b = b, a % b 
   return a 
-def egcd(a, b):
-  if a == 0:
-    return (b, 0, 1)
-  g, y, x = egcd(b%a,a)
-  return (g, x - (b//a) * y, y)
+
+def egcd(a1, a2):
+	x1, x2 = 1, 0
+	y1, y2 = 0, 1
+	while a2:
+		q = a1 // a2
+		a1, a2 = a2, a1 - q * a2
+		x1, x2 = x2, x1 - q * x2
+		y1, y2 = y2, y1 - q * y2
+	return (a1, x1, y1)
 
 def inv(a, m):
   g, x, y = egcd(a, m)
