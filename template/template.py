@@ -2,9 +2,9 @@ from Crypto.Util.number import *
 import binascii,socket,sys
 
 def gcd(a, b):
-  if a == 0: return b
-  return gcd(b%a, a)
-
+  while(b): 
+    a,b = b, a % b 
+  return a 
 def egcd(a, b):
   if a == 0:
     return (b, 0, 1)
