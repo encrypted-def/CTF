@@ -22,7 +22,7 @@ class remote:
 
   def sendline(self, msg):    
     if type(msg) == str: msg = msg.encode()
-    if msg[-1] != b'\n': msg += b'\n'
+    if msg[-1] != 10: msg += b'\n'
     self.socket.send(msg)
 
   def recv(self):
